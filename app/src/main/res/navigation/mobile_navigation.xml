@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_events">
+
+    <fragment
+        android:id="@+id/navigation_events"
+        android:name="com.abdoul.videoassessment.presentation.event.EventFragment"
+        android:label="@string/title_event"
+        tools:layout="@layout/fragment_events">
+        <action
+            android:id="@+id/event_to_player"
+            app:destination="@id/playerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_schedule"
+        android:name="com.abdoul.videoassessment.presentation.schedule.ScheduleFragment"
+        android:label="@string/title_schedule"
+        tools:layout="@layout/fragment_schedule" />
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.abdoul.videoassessment.presentation.event.PlayerFragment"
+        android:label="@string/title_player"
+        tools:layout="@layout/fragment_player">
+        <argument
+            android:name="videoItem"
+            app:argType="com.abdoul.videoassessment.domain.model.EventItem" />
+    </fragment>
+</navigation>
